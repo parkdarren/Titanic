@@ -28,12 +28,11 @@
 
 ## 사용 기술
 
-- Python
+* Python
 - Pandas
 - Matplotlib
 - Seaborn
 - Scikit-learn
-- Jupyter Notebook
 
 ## 파일 구성
 
