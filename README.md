@@ -1,42 +1,50 @@
 # Titanic Survival Prediction
 
-타이타닉 승객의 객실 등급, 나이 구분, 성별 정보를 이용해 생존 여부를 예측하는 분류 프로젝트입니다.
+타이타닉 승객의 객실 등급, 나이 구분, 성별 정보를 이용해 생존 여부를 예측한 분류 프로젝트입니다. 많이 알려진 예제 데이터지만, 단순히 정확도만 보는 대신 생존 클래스의 recall과 F1-score까지 함께 확인하는 방식으로 정리했습니다.
 
-## Problem
+## 문제 정의
 
-승객의 기본 정보를 바탕으로 `survived` 값을 예측합니다. 단순히 전체 정확도만 높이는 것보다 실제 생존자(`yes`)를 얼마나 놓치지 않는지 recall/F1-score까지 함께 확인하는 데 초점을 두었습니다.
-
-## Data
+주어진 승객 정보로 `survived` 값을 예측합니다.
 
 - Train: 1,800 rows
 - Test: 401 rows
 - Features: `status`, `age`, `sex`
-- Target: `survived`
+- Target: `survived` (`yes`, `no`)
 
-## Models
+## 분석 흐름
+
+- 생존 여부, 성별, 객실 등급별 분포 확인
+- 범주형 변수 One-Hot Encoding
+- Decision Tree와 앙상블 모델 비교
+- Accuracy, precision, recall, F1-score 확인
+- Confusion matrix로 오분류 패턴 확인
+
+## 사용 모델
 
 - Decision Tree
 - Random Forest
 - AdaBoost
 - Gradient Boosting
 
-## Evaluation
+## 사용 기술
 
-주요 평가지표는 다음과 같습니다.
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter Notebook
 
-- Accuracy
-- Precision / Recall / F1-score
-- Confusion Matrix
+## 파일 구성
 
-## What This Shows
+```text
+titanic_survival_prediction.ipynb
+data/
+  titanic_train.csv
+  titanic_test.csv
+```
 
-- 범주형 데이터 전처리
-- Pipeline 기반 모델링
-- 단일 트리와 앙상블 모델 비교
-- 클래스별 성능 해석
+## 정리
 
-## Files
+이 프로젝트는 입문형 분류 문제를 통해 전처리, 파이프라인 구성, 모델 비교, 분류 지표 해석을 연습한 작업입니다. 대표 프로젝트라기보다는 머신러닝 기본기를 보여주는 보조 프로젝트로 두는 것이 적합합니다.
 
-- `titanic_survival_prediction.ipynb`: 정리된 분석 노트북
-- `data/titanic_train.csv`: 학습 데이터
-- `data/titanic_test.csv`: 테스트 데이터
